@@ -37,7 +37,8 @@ public class UserController {
 
     @PostMapping
     public Mono<UserDto> createUser(@RequestBody Mono<UserDto> userDtoMono) {
-        return this.service.createUser(userDtoMono);
+        Mono<UserDto> mono = this.service.createUser(userDtoMono);
+        return mono;
     }
 
     @PutMapping("{id}")

@@ -25,10 +25,12 @@ public class UserService {
     }
 
     public Mono<UserDto> createUser(Mono<UserDto> userDtoMono) {
-        return userDtoMono
+        Mono<UserDto> mono =  userDtoMono
             .map(EntityDtoUtil::toEntity)
             .flatMap(this.userRepository::save)
             .map(EntityDtoUtil::toDto);
+
+        return mono;
     }
 
     public Mono<UserDto> updateUser(int id, Mono<UserDto> userDtoMono) {

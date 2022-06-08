@@ -26,7 +26,7 @@ public class EntityDtoUtil {
 
     public static UserTransaction toEntity(TransactionRequestDto requestDto) {
         UserTransaction ut = new UserTransaction();
-        ut.setId(requestDto.getUserId());
+        ut.setUserId(requestDto.getUserId());
         ut.setAmount(requestDto.getAmount());
         ut.setTransactionDate(LocalDateTime.now());
         return ut;

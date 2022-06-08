@@ -1,0 +1,39 @@
+### get-all-users
+GET http://localhost:8092/user/all
+accept: application/json
+
+### create-user
+POST http://localhost:8092/user
+accept: application/json
+Content-Type: application/json
+
+{
+    "name": "mike",
+    "balance": 2000
+}
+
+### update-user
+PUT http://localhost:8092/user/3
+accept: application/json
+Content-Type: application/json
+
+{
+  "name": "mike",
+  "balance": 1200
+}
+
+### delete-users
+DELETE http://localhost:8092/user/3
+accept: application/json
+
+### create-transaction
+POST http://localhost:8092/user/transaction
+accept: application/json
+Content-Type: application/json
+
+{
+  "userId": 2,
+  "amount": 200
+}
+
+###
