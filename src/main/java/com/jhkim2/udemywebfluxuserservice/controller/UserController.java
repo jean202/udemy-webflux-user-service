@@ -1,7 +1,6 @@
 package com.jhkim2.udemywebfluxuserservice.controller;
 
 import com.jhkim2.udemywebfluxuserservice.dto.UserDto;
-import com.jhkim2.udemywebfluxuserservice.entity.User;
 import com.jhkim2.udemywebfluxuserservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -42,7 +41,7 @@ public class UserController {
     }
 
     @PutMapping("{id}")
-    public Mono<ResponseEntity<UserDto>> updateUsere(@PathVariable int id, @RequestBody Mono<UserDto> userDtoMono) {
+    public Mono<ResponseEntity<UserDto>> updateUser(@PathVariable int id, @RequestBody Mono<UserDto> userDtoMono) {
         return this.service.updateUser(id, userDtoMono)
             .map(ResponseEntity::ok)
             .defaultIfEmpty(ResponseEntity.notFound().build());
